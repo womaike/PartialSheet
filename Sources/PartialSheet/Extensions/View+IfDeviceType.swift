@@ -19,7 +19,8 @@ var deviceType: DeviceType = {
     return .mac
 #else
     if UIDevice.current.userInterfaceIdiom == .pad {
-        return .ipad
+        //return .ipad
+        return .iphone
     } else {
         return .iphone
     }
