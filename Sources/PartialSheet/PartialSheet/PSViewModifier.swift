@@ -105,8 +105,10 @@ struct PartialSheet: ViewModifier {
                             removeKeyboardNotifier()
                         }
                         .onFrameDidChange { prefData in
-                            withAnimation {
-                                self.presenterContentRect = prefData.first?.bounds ?? .zero
+                            if UIDevice.current.userInterfaceIdiom == .pad {
+                                withAnimation {
+                                    self.presenterContentRect = prefData.first?.bounds ?? .zero
+                                }
                             }
                         }
                 }
